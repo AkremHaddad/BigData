@@ -1,16 +1,19 @@
-# This is a sample Python script.
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+data = {'Nom': ['Alice', 'Bob', 'Charlie', 'David' ,'Eva'], 'Age': [25, 30, 35, 28, 22]}
 
+tab = pd.DataFrame(data)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+print(tab)
 
+moyenne_age = np.mean(tab['Age'])
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+print(moyenne_age)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+plt.bar(tab['Nom'], tab['Age'])
+plt.xlabel('Nom')
+plt.xlabel('Age')
+plt.title('age des personnes')
+plt.show()
